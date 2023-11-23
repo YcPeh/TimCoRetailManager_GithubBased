@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Collections.Generic;
+using System.Web.Http;
 using Microsoft.AspNet.Identity;
 using TRMDataManager.Library.Data_Access;
 using TRMDataManager.Library.Models;
@@ -14,6 +15,13 @@ namespace TRMDataManager.Controllers
             string userId = RequestContext.Principal.Identity.GetUserId();
 
             data.SaveSale(sale, userId);
+        }
+
+        [Route("GetSalesReport")]
+        public List<SaleReportModel> GetSalesReport()
+        {
+            SaleData data = new SaleData();
+            return data.GetSaleReport();
         }
 
     }
