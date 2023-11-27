@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
 using TRMDataManager.Library.Internal.DataAccess;
 using TRMDataManager.Library.Models;
 
@@ -6,9 +7,15 @@ namespace TRMDataManager.Library.Data_Access
 {
     public class InventoryData
     {
+        private readonly IConfiguration _config;
+
+        public InventoryData(IConfiguration config)
+        {
+            _config = config;
+        }
         public List<InventoryModel> GetInventory()
         {
-            SqlDataAccess sql = new SqlDataAccess();
+            SqlDataAccess sql = new SqlDataAccess(_config);
 
             var output = sql.LoadData<InventoryModel, dynamic>("dbo.spInventory_GetAll", new { }, "TRMData");
 
@@ -17,7 +24,7 @@ namespace TRMDataManager.Library.Data_Access
 
         public void SaveInventoryRecord(InventoryModel item)
         {
-            SqlDataAccess sql = new SqlDataAccess();
+            SqlDataAccess sql = new SqlDataAccess(_config);
 
             sql.SaveData("dbo.spInventory_Insert", item, "TRMData");
         }
