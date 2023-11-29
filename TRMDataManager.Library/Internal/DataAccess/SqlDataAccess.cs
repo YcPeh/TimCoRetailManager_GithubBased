@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace TRMDataManager.Library.Internal.DataAccess
 {
-    internal class SqlDataAccess : IDisposable
+    public class SqlDataAccess : IDisposable, ISqlDataAccess
     {
         private readonly IConfiguration _config;
 
@@ -107,10 +107,5 @@ namespace TRMDataManager.Library.Internal.DataAccess
             _connection = null;
         }
 
-        // open connection / start transaction method
-        // load using the transaction
-        // save using the transaction
-        // close connection / stop trransaction method
-        // dispose
     }
 }
