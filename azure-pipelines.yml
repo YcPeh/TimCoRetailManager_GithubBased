@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  name: 'local-autologon-service'
+  name: 'agent-auto'
 
 variables:
   solution: '**/*.sln'
