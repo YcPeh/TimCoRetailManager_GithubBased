@@ -98,7 +98,7 @@ steps:
     script: |
       dotnet tool uninstall -g dotnet-ef
       dotnet tool install --global dotnet-ef --version 7.0
-      dotnet ef migrations script -i -o $(build.artifactStagingDirectory)\migration.sql -p TRMApi\TRMApi.csproj
+      dotnet-ef migrations script -i -o $(build.artifactStagingDirectory)\migration.sql -p TRMApi\TRMApi.csproj
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish AuthDB Script'
