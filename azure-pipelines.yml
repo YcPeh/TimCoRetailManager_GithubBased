@@ -97,7 +97,7 @@ steps:
   inputs:
     script: |
       dotnet tool uninstall -g dotnet-ef
-      dotnet tool install dotnet-ef --tool-path C:\agent-auto\tools
+      dotnet tool install dotnet-ef --tool-path C:\agent-auto\tools --version 7.0
       C:\agent-auto\tools\dotnet-ef migrations script -i -o $(build.artifactStagingDirectory)\migration.sql -p TRMApi\TRMApi.csproj
 
 - task: PublishBuildArtifacts@1
