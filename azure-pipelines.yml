@@ -96,7 +96,7 @@ steps:
   displayName: 'Command Line Script for AuthDB (Entity Framework database)'
   inputs:
     script: |
-      dotnet tool install --global dotnet-ef
+      dotnet tool install --global dotnet-ef --version 7.0
       dotnet ef migrations script -i -o $(build.artifactStagingDirectory)\migration.sql -p TRMApi\TRMApi.csproj
 
 - task: PublishBuildArtifacts@1
