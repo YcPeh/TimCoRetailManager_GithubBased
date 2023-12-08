@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using TRMDataManager.Library.Models;
 
-namespace TRMDataManager.Library.Data_Access
+namespace TRMDataManager.Library.DataAccess
 {
     public interface IProductData
     {

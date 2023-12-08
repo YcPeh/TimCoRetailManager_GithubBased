@@ -5,9 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using TRMApi.Data;
-using TRMDataManager.Library.Data_Access;
 using TRMDataManager.Library.DataAccess;
-using TRMDataManager.Library.Internal.DataAccess;
 
 namespace TRMApi
 {
